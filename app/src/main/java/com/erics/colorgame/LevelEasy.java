@@ -2,6 +2,7 @@ package com.erics.colorgame;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -19,11 +20,11 @@ import java.util.Random;
 
 public class LevelEasy extends AppCompatActivity {
 
-    ArrayList<Field> redShapes = new ArrayList<>();
-    ArrayList<Field> blueShapes = new ArrayList<>();
-    ArrayList<Field> greenShapes = new ArrayList<>();
-    ArrayList<Field> yellowShapes = new ArrayList<>();
-    ArrayList<Field> orangeShapes = new ArrayList<>();
+    public static ArrayList<Field> redShapes = new ArrayList<>();
+    public static ArrayList<Field> blueShapes = new ArrayList<>();
+    public static ArrayList<Field> greenShapes = new ArrayList<>();
+    public static ArrayList<Field> yellowShapes = new ArrayList<>();
+    public static ArrayList<Field> orangeShapes = new ArrayList<>();
 
     ImageView[] imageViews = new ImageView[4];
     TextView[] colorNameTextView = new TextView[imageViews.length];
@@ -48,7 +49,6 @@ public class LevelEasy extends AppCompatActivity {
         String[] colorKeys = new String[]{
           "red4", "green4", "blue4", "yellow4", "orange4"
         };
-        //ArrayList<Drawable> drawables = new ArrayList<>();
 
         for (int i = 0; i < drawablesFields.length; i++) {
             Field field = drawablesFields[i];
@@ -58,7 +58,6 @@ public class LevelEasy extends AppCompatActivity {
                 if(field.getName().contains(colorKeys[2]))blueShapes.add(field);
                 if(field.getName().contains(colorKeys[3]))yellowShapes.add(field);
                 if(field.getName().contains(colorKeys[4]))orangeShapes.add(field);
-                //drawables.add(getResources().getDrawable(field.getInt(null)));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -109,6 +108,6 @@ public class LevelEasy extends AppCompatActivity {
     }
 
     public void startTheTest(View view) {
-
+        startActivity(new Intent(getApplicationContext(), TestActivity.class));
     }
 }
