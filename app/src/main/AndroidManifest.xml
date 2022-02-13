@@ -11,6 +11,7 @@
         android:theme="@style/Theme.EricsColorGame">
         <activity
             android:name=".TestActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".LevelEasy"

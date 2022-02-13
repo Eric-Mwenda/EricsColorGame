@@ -113,6 +113,7 @@ public class TestActivity extends AppCompatActivity {
             congratulationsTextView.setText(congratulationsMessages[random.nextInt(congratulationsMessages.length)]);
         }
         else{
+            congratulationsTextView.setText("Try Again!");
             Toast.makeText(getApplicationContext(), "WRONG COLOR! TRY AGAIN!", Toast.LENGTH_SHORT).show();
         }
     }
